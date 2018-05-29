@@ -1,0 +1,18 @@
+----------------------- Test Results ---------------------
+
+Log Shipper:              filebeat
+PID:                      19193
+Start Time:               2018-05-28T11:02:24-04:00
+End Time:                 2018-05-28T11:07:24-04:00
+Total Time (s):           300.035786
+Sample Log Entry:         [Tuesday 20 May 2018] 220.198.208.135 845 Lionhail wrote: Near it in the field, I remember, were three faint points of light, three telescopic stars i
+
+Write Wait Period (ms):   10
+Total Lines Written:      1795976
+Total Files Written:      60
+Calculated lines/s:       5986
+Metricbeat data file:     /home/user/benchmark-metrics/benchmark-filebeat-150bytes_60files_300s_20180528110224.log
+
+Sample log in kafka:	  {"@timestamp":"2018-05-28T00:05:53.756Z","@metadata":{"beat":"filebeat","type":"doc","version":"6.1.1","topic":"dev-logs-shipper-benchmarks-filebeat"},"source":"/home/user/tmp/file23.log","offset":11023,"message":"[Sunday 16 Apr 2018] 136.86.33.152 714 Roarergossamer wrote: The secular cooling that must someday overtake our planet has already gone far indeed wit","prospector":{"type":"log"},"beat":{"name":"bench01","hostname":"bench01","version":"6.1.1"}}
+Size sample:		  459 bytes
+----------------------------------------------------------

@@ -1,0 +1,17 @@
+----------------------- Test Results ---------------------
+Log Shipper:              rsyslogd
+PID:                      17739
+Start Time:               2018-05-28T18:14:05-04:00
+End Time:                 2018-05-28T19:14:05-04:00
+Total Time (s):           3600.016978
+Sample Log Entry:         [Sunday 4 May 2018] 93.16.146.98 590 Princefast wrote: The sun set; the dusk fell on the stream, and lights began to appear along the shore. The Chapm
+
+Write Wait Period (ms):   10
+Total Lines Written:      35987365
+Total Files Written:      100
+Calculated lines/s:       9996
+Metricbeat data file:     /home/user/benchmark-metrics/benchmark-rsyslogd-150bytes_100files_3600s_20180528181405.log
+
+Sample log in kafka:	  {"@timestamp":"2018-05-27T20:13:50.089579-04:00","message":"[Wednesday 23 Sep 2018] 71.100.237.8 766 Jestermotley wrote: The secular cooling that must someday overtake our planet has already gone far indeed wit","host":"bench01"}
+Size sample:		  229 bytes
+----------------------------------------------------------

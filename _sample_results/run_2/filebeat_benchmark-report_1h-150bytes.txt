@@ -1,0 +1,17 @@
+----------------------- Test Results ---------------------
+Log Shipper:              filebeat
+PID:                      17274
+Start Time:               2018-05-28T15:29:27-04:00
+End Time:                 2018-05-28T16:29:27-04:00
+Total Time (s):           3600.562416
+Sample Log Entry:         [Thursday 24 Jan 2018] 15.7.70.212 472 Fairytwilight wrote: The Nellie, a cruising yawl, swung to her anchor without a flutter of the sails, and was a
+
+Write Wait Period (ms):   10
+Total Lines Written:      35404539
+Total Files Written:      100
+Calculated lines/s:       9831
+Metricbeat data file:     /home/user/benchmark-metrics/benchmark-filebeat-150bytes_100files_3600s_20180528152927.log
+
+Sample log in kafka:	  {"@timestamp":"2018-05-28T00:05:53.756Z","@metadata":{"beat":"filebeat","type":"doc","version":"6.1.1","topic":"dev-logs-shipper-benchmarks-filebeat"},"source":"/home/user/tmp/file23.log","offset":11023,"message":"[Sunday 16 Apr 2018] 136.86.33.152 714 Roarergossamer wrote: The secular cooling that must someday overtake our planet has already gone far indeed wit","prospector":{"type":"log"},"beat":{"name":"bench01","hostname":"bench01","version":"6.1.1"}}
+Size sample:		  459 bytes
+----------------------------------------------------------

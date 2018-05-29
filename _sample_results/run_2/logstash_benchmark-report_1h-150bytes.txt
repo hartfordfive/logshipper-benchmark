@@ -1,0 +1,17 @@
+----------------------- Test Results ---------------------
+Log Shipper:              logstash
+PID:                      23926
+Start Time:               2018-05-29T05:23:38-04:00
+End Time:                 2018-05-29T06:23:38-04:00
+Total Time (s):           3600.035430
+Sample Log Entry:         [Tuesday 18 May 2018] 163.185.230.232 456 Snarlclover wrote: The secular cooling that must someday overtake our planet has already gone far indeed wit
+
+Write Wait Period (ms):   10
+Total Lines Written:      35914845
+Total Files Written:      100
+Calculated lines/s:       9976
+Metricbeat data file:     /home/user/benchmark-metrics/benchmark-logstash-150bytes_100files_3600s_20180529052338.log
+
+Sample log in kafka:	  {"path":"/home/user/tmp/file3.log","host":"bench01","message":"[Sunday 19 May 2018] 183.207.217.153 707 Thunderforest wrote: He spoke of the happiness that was now certainly theirs, of the folly of not breaking so","@timestamp":"2018-05-28T00:35:52.658Z","@version":"1"}
+Size sample:		  288 bytes
+----------------------------------------------------------

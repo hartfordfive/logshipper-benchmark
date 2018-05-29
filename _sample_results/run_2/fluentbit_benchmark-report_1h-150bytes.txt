@@ -1,0 +1,17 @@
+----------------------- Test Results ---------------------
+Log Shipper:              fluentbit
+PID:                      18286
+Start Time:               2018-05-28T19:50:20-04:00
+End Time:                 2018-05-28T20:50:20-04:00
+Total Time (s):           3600.033382
+Sample Log Entry:         [Saturday 26 Jun 2018] 63.28.81.73 920 Fighterpatch wrote: She stared at him in astonishment, and as she read something of the significant hieroglyphi
+
+Write Wait Period (ms):   10
+Total Lines Written:      35850725
+Total Files Written:      100
+Calculated lines/s:       9958
+Metricbeat data file:     /home/user/benchmark-metrics/benchmark-fluentbit-150bytes_100files_3600s_20180528195020.log
+
+Sample log in kafka:	  {"@timestamp":1527466926.915616, "log":"[Wednesday 14 Jan 2018] 24.182.35.37 308 Antelopenettle wrote: It was at this time that the meeting, or, rather gathering of the mem- bers of this inh"}
+Size sample:		  192 bytes
+----------------------------------------------------------

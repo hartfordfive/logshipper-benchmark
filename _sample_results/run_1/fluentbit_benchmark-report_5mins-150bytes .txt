@@ -1,0 +1,18 @@
+----------------------- Test Results ---------------------
+
+Log Shipper:              fluentbit
+PID:                      19562
+Start Time:               2018-05-28T11:39:13-04:00
+End Time:                 2018-05-28T11:44:13-04:00
+Total Time (s):           300.003969
+Sample Log Entry:         [Tuesday 1 Jun 2018] 132.207.89.196 369 Thunderplume wrote: He spoke of the happiness that was now certainly theirs, of the folly of not breaking soon
+
+Write Wait Period (ms):   10
+Total Lines Written:      1795767
+Total Files Written:      60
+Calculated lines/s:       5985
+Metricbeat data file:     /home/user/benchmark-metrics/benchmark-fluentbit-150bytes_60files_300s_20180528113913.log
+
+Sample log in kafka:	  {"@timestamp":1527466926.915616, "log":"[Wednesday 14 Jan 2018] 24.182.35.37 308 Antelopenettle wrote: It was at this time that the meeting, or, rather gathering of the mem- bers of this inh"}
+Size sample:		  192 bytes
+----------------------------------------------------------

@@ -1,0 +1,30 @@
+{
+  "additional_metricbeat_fields": {},
+  "custom_log_entry": "",
+  "enable_random": false,
+  "kafka_broker_list": [
+    "kafka01:9092"
+  ],
+  "log_files_base_dir": "/path/to/created/logfiles",
+  "log_line_size": 150,
+  "log_shipper_bin_path": "/usr/share/logstash/bin/logstash",
+  "log_shipper_flags": "-f main.conf --path.settings . --path.data . --log.level error",
+  "log_shipper_name": "logstash",
+  "log_shipper_process_name": "java",
+  "max_procs": 4,
+  "metrics_dir": "/path/to/metrics/data",
+  "module_dir": "modules/",
+  "module_name": "logstash_6_1_1",
+  "num_active_log_files": 100,
+  "random_line_size": [
+    40,
+    200
+  ],
+  "random_write_wait": [
+    10,
+    2000
+  ],
+  "total_run_time_seconds": 3600,
+  "working_dir": "/path/to/logshipper/working/dir",
+  "write_wait_period_ms": 10
+}

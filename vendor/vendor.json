@@ -1,0 +1,103 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "GrQDc1iwE04dWFGmLuuGy7X+XKg=",
+			"path": "github.com/Pallinder/go-randomdata",
+			"revision": "b073033ef5a7c42a3f188393575a0850919777a6",
+			"revisionTime": "2018-05-05T15:28:23Z"
+		},
+		{
+			"checksumSHA1": "st4vb0GmDeoKbsfxdpNZ2MPl76M=",
+			"path": "github.com/StackExchange/wmi",
+			"revision": "cdffdb33acae0e14efff2628f9bae377b597840e",
+			"revisionTime": "2018-04-12T20:51:11Z"
+		},
+		{
+			"checksumSHA1": "wsYTpngyc3tc8H214k3QYMoRWig=",
+			"path": "github.com/c9s/goprocinfo/linux",
+			"revision": "0010a05ce49fde7f50669bc7ecda7d41dd6ab824",
+			"revisionTime": "2017-07-24T08:57:04Z"
+		},
+		{
+			"checksumSHA1": "D1Y23ibX0mIo+8++Boq7TFb40no=",
+			"path": "github.com/go-ole/go-ole",
+			"revision": "a1ec82a652ebc7e784d7df887cfb31061aeabbcc",
+			"revisionTime": "2018-02-13T00:28:36Z"
+		},
+		{
+			"checksumSHA1": "PArleDBtadu2qO4hJwHR8a3IOTA=",
+			"path": "github.com/go-ole/go-ole/oleutil",
+			"revision": "a1ec82a652ebc7e784d7df887cfb31061aeabbcc",
+			"revisionTime": "2018-02-13T00:28:36Z"
+		},
+		{
+			"checksumSHA1": "DcYIZnMiq/Tj22/ge9os3NwOhs4=",
+			"path": "github.com/mitchellh/go-ps",
+			"revision": "4fdf99ab29366514c69ccccddab5dc58b8d84062",
+			"revisionTime": "2017-03-09T13:30:38Z"
+		},
+		{
+			"checksumSHA1": "EpVwP8tjvD/rYp58h6IPOYs6Skc=",
+			"path": "github.com/shirou/gopsutil",
+			"revision": "cbf4fde1522d05c83ec4370cdc52d5c2ba1f2ed2",
+			"revisionTime": "2018-05-19T04:25:30Z"
+		},
+		{
+			"checksumSHA1": "q14d3C3xvWevU3dSv4P5K0+OSD0=",
+			"path": "github.com/shirou/gopsutil/cpu",
+			"revision": "cbf4fde1522d05c83ec4370cdc52d5c2ba1f2ed2",
+			"revisionTime": "2018-05-19T04:25:30Z"
+		},
+		{
+			"checksumSHA1": "DsX4iYUDsk5BxuQxStvrq6VyBFI=",
+			"path": "github.com/shirou/gopsutil/host",
+			"revision": "cbf4fde1522d05c83ec4370cdc52d5c2ba1f2ed2",
+			"revisionTime": "2018-05-19T04:25:30Z"
+		},
+		{
+			"checksumSHA1": "ElneFnzdyg/mWfMFukLUHdy9DHY=",
+			"path": "github.com/shirou/gopsutil/internal/common",
+			"revision": "cbf4fde1522d05c83ec4370cdc52d5c2ba1f2ed2",
+			"revisionTime": "2018-05-19T04:25:30Z"
+		},
+		{
+			"checksumSHA1": "MmaL6hQrMUmEbu/d/DXehKzAuxc=",
+			"path": "github.com/shirou/gopsutil/mem",
+			"revision": "cbf4fde1522d05c83ec4370cdc52d5c2ba1f2ed2",
+			"revisionTime": "2018-05-19T04:25:30Z"
+		},
+		{
+			"checksumSHA1": "cqp+0Xxb51xFf3ekjlaS/EpipZU=",
+			"path": "github.com/shirou/gopsutil/net",
+			"revision": "cbf4fde1522d05c83ec4370cdc52d5c2ba1f2ed2",
+			"revisionTime": "2018-05-19T04:25:30Z"
+		},
+		{
+			"checksumSHA1": "KD6zkJ8i3mQVdhMNPHN/4RBkk+M=",
+			"path": "github.com/shirou/gopsutil/process",
+			"revision": "cbf4fde1522d05c83ec4370cdc52d5c2ba1f2ed2",
+			"revisionTime": "2018-05-19T04:25:30Z"
+		},
+		{
+			"checksumSHA1": "Nve7SpDmjsv6+rhkXAkfg/UQx94=",
+			"path": "github.com/shirou/w32",
+			"revision": "bb4de0191aa41b5507caa14b0650cdbddcd9280b",
+			"revisionTime": "2016-09-30T03:27:40Z"
+		},
+		{
+			"checksumSHA1": "d6X2RDfVXuMcYunJ5Hwy/qP6C/w=",
+			"path": "golang.org/x/sys/unix",
+			"revision": "7f59abf37be6a6007f075af1bc7f16f137bc176b",
+			"revisionTime": "2018-05-22T03:16:44Z"
+		},
+		{
+			"checksumSHA1": "+mZiO0TdI05VboObjo18vs4sEbg=",
+			"path": "golang.org/x/sys/windows",
+			"revision": "7f59abf37be6a6007f075af1bc7f16f137bc176b",
+			"revisionTime": "2018-05-22T03:16:44Z"
+		}
+	],
+	"rootPath": "github.com/hartfordfive/logshipper-benchmark"
+}

@@ -1,0 +1,17 @@
+----------------------- Test Results ---------------------
+Log Shipper:              logstash
+PID:                      19630
+Start Time:               2018-05-28T11:45:06-04:00
+End Time:                 2018-05-28T11:50:06-04:00
+Total Time (s):           300.003435
+Sample Log Entry:         [Saturday 23 Oct 2018] 4.165.110.92 859 Raverdestiny wrote: He spoke of the happiness that was now certainly theirs, of the folly of not breaking soon
+
+Write Wait Period (ms):   10
+Total Lines Written:      1765511
+Total Files Written:      60
+Calculated lines/s:       5885
+Metricbeat data file:     /home/user/benchmark-metrics/benchmark-logstash-150bytes_60files_300s_20180528114506.log
+
+Sample log in kafka:	  {"path":"/home/user/tmp/file3.log","host":"bench01","message":"[Sunday 19 May 2018] 183.207.217.153 707 Thunderforest wrote: He spoke of the happiness that was now certainly theirs, of the folly of not breaking so","@timestamp":"2018-05-28T00:35:52.658Z","@version":"1"}
+Size sample:		  288 bytes
+----------------------------------------------------------

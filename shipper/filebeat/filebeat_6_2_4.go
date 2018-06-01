@@ -11,15 +11,14 @@ import (
 	"text/template"
 
 	"github.com/containerd/cgroups"
-
 	utils "github.com/hartfordfive/logshipper-benchmark/lib"
 )
 
 var Debug bool = false
 
 const supportedShipperVersionMajor = 6
-const supportedShipperVersionMinor = 1
-const supportedShipperVersionPatch = 1
+const supportedShipperVersionMinor = 2
+const supportedShipperVersionPatch = 4
 
 const configTpl = `---
 setup:
@@ -57,8 +56,7 @@ type config struct {
 	FilesToMonitor []string
 }
 
-type shipper struct {
-}
+type shipper struct{}
 
 func (s shipper) Name() string { return "filebeat" }
 
@@ -171,16 +169,6 @@ func (s shipper) Run(binPath string, cmdArgs []string, workingDir string, filesT
 
 func (s shipper) GetVersion() string {
 	return fmt.Sprintf("%d.%d.%d", supportedShipperVersionMajor, supportedShipperVersionMinor, supportedShipperVersionPatch)
-}
-
-func (s shipper) EnsureVersion(binPath string) bool {
-	// filebeat version [VERSION] ([ARC]), libbeat [VERSION]
-	output, err := exec.Command(binPath, "version").CombinedOutput()
-	if err != nil {
-		os.Stderr.WriteString(err.Error())
-	}
-	fmt.Println(string(output))
-
 }
 
 func InitShipper() (s interface{}, err error) {

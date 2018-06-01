@@ -18,6 +18,7 @@ build:
 
 buildplugins:
 	$(GOBUILD) -i -a -v -buildmode=plugin -o modules/filebeat_6_1_1.so shipper/filebeat/filebeat_6_1_1.go
+	$(GOBUILD) -i -a -v -buildmode=plugin -o modules/filebeat_6_2_4.so shipper/filebeat/filebeat_6_2_4.go
 	$(GOBUILD) -i -a -v -buildmode=plugin -o modules/rsyslogd_8_34_0.so shipper/rsyslogd/rsyslogd_8_34_0.go
 	$(GOBUILD) -i -a -v -buildmode=plugin -o modules/fluentbit_0_13_1.so shipper/fluentbit/fluentbit_0_13_1.go
 	$(GOBUILD) -i -a -v -buildmode=plugin -o modules/nxlog_2_10_2102.so shipper/nxlog/nxlog_2_10_2102.go
@@ -41,6 +42,7 @@ cleanall: clean cleanplugins
 
 run:
 	$(GOBUILD) -a -v -buildmode=plugin -o modules/filebeat_6_1_1.so shipper/filebeat/filebeat_6_1_1.go
+	$(GOBUILD) -a -v -buildmode=plugin -o modules/filebeat_6_2_4.so shipper/filebeat/filebeat_6_2_4.go
 	$(GOBUILD) -a -v -buildmode=plugin -o modules/rsyslogd_8_34_0.so shipper/rsyslogd/rsyslogd_8_34_0.go
 	$(GOBUILD) -a -v -buildmode=plugin -o modules/fluentbit_0_13_1.so shipper/fluentbit/fluentbit_0_13_1.go
 	$(GOBUILD) -a -v -buildmode=plugin -o modules/nxlog_2_10_2102.so shipper/nxlog/nxlog_2_10_2102.go

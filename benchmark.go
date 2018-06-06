@@ -18,6 +18,9 @@ import (
 	"syscall"
 	"time"
 
+	"github.com/containerd/cgroups"
+	specs "github.com/opencontainers/runtime-spec/specs-go"
+
 	utils "github.com/hartfordfive/logshipper-benchmark/lib"
 	counter "github.com/hartfordfive/logshipper-benchmark/lib/counter"
 )
@@ -199,6 +202,29 @@ func main() {
 		}(shutdownChan)
 	}
 
+	var control cgroups.Cgroup
+	if config.EnableCgroupLimit {
+		 fmt.Printf("[INFO] Setting Cgroup limits for process..\n")
+		// Create the cgroup to limit the CPU of the log shipper
+		//shares := uint64(100)
+		realtimeRuntime := int64(config.CgroupCpuRuntime)  // 10 ms / 10000 microsec / total cpu allowed during period
+		realtimePeriod := uint64(config.CgroupCpuPeriod) // 500 ms / 500000 microsec / period length
+
+		control, err := cgroups.New(cgroups.V1, cgroups.StaticPath(fmt.Sprintf("/logshipper-benchmark-%s", config.LogShipperName)), &specs.LinuxResources{
+			CPU: &specs.LinuxCPU{
+				//Shares:          &shares,
+				RealtimeRuntime: &realtimeRuntime,
+				RealtimePeriod:  &realtimePeriod,
+			},
+		})
+		if err != nil {
+			fmt.Println("[ERROR] Could not create cgroup: ", err)
+		} else {
+			defer control.Delete()
+		}
+
+	}
+
 	// Start the log shipper
 	workingDir := fmt.Sprintf("%s/%s/", strings.TrimRight(config.WorkingDir, "/"), config.LogShipperName)
 	utils.CreateDir(workingDir)
@@ -207,6 +233,12 @@ func main() {
 	// Now wait until we get a copy of the pointer to the exec.Cmd struct
 	fmt.Println("Waiting for confirmation of shipper started...")
 	shipperExec := <-execAck
+
+	if config.EnableCgroupLimit {
+		if err := control.Add(cgroups.Process{Pid: shipperExec.Process.Pid}); err != nil {
+        		fmt.Printf("[WARN] Could not add %s (pid %d) to logshipper-benchmark cgroup: %s\n", config.LogShipperName, shipperExec.Process.Pid, err)
+        	}
+	}
 
 	go waitForShutdown(linesWrittenCounter, shutdownChan)
 
@@ -223,7 +255,7 @@ func main() {
 	for i := 0; i < config.NumActiveLogFiles; i++ {
 
 		if utils.Debug {
-			fmt.Printf("[DEBUG] Creating goroutine #%d to write to %s\n", i, fileHandles[i].Name())
+			//fmt.Printf("[DEBUG] Creating goroutine #%d to write to %s\n", i, fileHandles[i].Name())
 		}
 
 		go func(logStr string, filePath string, fh *os.File, counter *counter.Counter, shutdownChan <-chan bool, wg *sync.WaitGroup) {
@@ -254,7 +286,7 @@ func main() {
 				case <-shutdownChan:
 					fInfo, _ := fh.Stat()
 					if utils.Debug {
-						fmt.Printf("[INFO] Terminating file writter for %s\n", fInfo.Name())
+						//fmt.Printf("[INFO] Terminating file writter for %s\n", fInfo.Name())
 					}
 					fh.Close()
 					if err := os.Remove(filePath); err != nil {

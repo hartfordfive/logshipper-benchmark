@@ -56,6 +56,8 @@ deps:
 	$(GO_DEP_FETCH) github.com/Pallinder/go-randomdata
 	$(GO_DEP_FETCH) github.com/mitchellh/go-ps
 	$(GO_DEP_FETCH) github.com/shirou/gopsutil
+	${GO_DEP_FETCH} github.com/containerd/cgroups
+	${GO_DEP_FETCH} github.com/opencontainers/runtime-spec/specs-go
 
 
 # Cross compilation

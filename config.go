@@ -27,6 +27,9 @@ type BenchmarkConfig struct {
 	CustomLogEntry        string   `json:"custom_log_entry"`
 	KafkaBrokerList       []string `json:"kafka_broker_list"`
 	TotalRunTimeSeconds   int64    `json:"total_run_time_seconds"`
+	EnableCgroupLimit        bool     `json:"enable_cgroup_limit"`
+	CgroupCpuRuntime      int64    `json:"cgroup_cpu_runtime"` // >= cgroup_cpu_period
+	CgroupCpuPeriod       uint64   `json:"cgroup_cpu_period"`  // out of a max of 1 000 000 microseconds
 }
 
 func LoadConfig(confPath string) *BenchmarkConfig {

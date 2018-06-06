@@ -10,7 +10,8 @@ import (
 	"syscall"
 	"text/template"
 
-	"github.com/containerd/cgroups"
+	//"github.com/containerd/cgroups"
+	//specs "github.com/opencontainers/runtime-spec/specs-go"
 
 	utils "github.com/hartfordfive/logshipper-benchmark/lib"
 )
@@ -110,15 +111,24 @@ func (s shipper) Run(binPath string, cmdArgs []string, workingDir string, filesT
 		kafkBrokers,
 	)
 
+	/*
 	//shares := uint64(100)
+        realtimeRuntime :=  int64(10000) // 10 ms
+        realtimePeriod := uint64(500000) // 500 ms
+
 	control, err := cgroups.New(cgroups.V1, cgroups.StaticPath(fmt.Sprintf("/logshipper-benchmark-%s", s.Name())), &specs.LinuxResources{
-		CPU: &specs.CPU{
+		CPU: &specs.LinuxCPU{
 			//Shares:          &shares,
-			RealtimeRuntime: 10000,   // 10 ms
-			RealtimePeriod:  1000000, // 1 second
+			RealtimeRuntime: &realtimeRuntime,  
+			RealtimePeriod:  &realtimePeriod, 
 		},
 	})
-	defer control.Delete()
+	if err != nil {
+		fmt.Println("[ERROR] Could not create cgroup: ", err)
+	} else {
+		defer control.Delete()
+	}
+	*/
 
 	// Ensure the working directory exists, if not create it
 	//workingDir :=  fmt.Sprintf("%s/benchmarks/%s/", strings.TrimRight(utils.GetCwd(), "/"), s.Name())
@@ -140,9 +150,11 @@ func (s shipper) Run(binPath string, cmdArgs []string, workingDir string, filesT
 		os.Exit(1)
 	}
 
+	/*
 	if err := control.Add(cgroups.Process{Pid: cmd.Process.Pid}); err != nil {
 		fmt.Printf("[WARN] Could not add %s (pid %d) to logshipper-benchmark cgroup: %s\n", s.Name(), cmd.Process.Pid, err)
 	}
+	*/	
 
 	go utils.CollectCpuStats(cmd.Process.Pid, fmt.Sprintf("%s/metrics/%s", strings.TrimRight(workingDir, "/"), s.Name()), shutdownChan)
 
@@ -180,7 +192,7 @@ func (s shipper) EnsureVersion(binPath string) bool {
 		os.Stderr.WriteString(err.Error())
 	}
 	fmt.Println(string(output))
-
+	return false
 }
 
 func InitShipper() (s interface{}, err error) {

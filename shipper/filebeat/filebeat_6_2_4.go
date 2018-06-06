@@ -10,7 +10,10 @@ import (
 	"syscall"
 	"text/template"
 
-	"github.com/containerd/cgroups"
+        "github.com/containerd/cgroups"
+        specs "github.com/opencontainers/runtime-spec/specs-go"
+
+
 	utils "github.com/hartfordfive/logshipper-benchmark/lib"
 )
 
@@ -108,15 +111,22 @@ func (s shipper) Run(binPath string, cmdArgs []string, workingDir string, filesT
 		kafkBrokers,
 	)
 
-	//shares := uint64(100)
-	control, err := cgroups.New(cgroups.V1, cgroups.StaticPath(fmt.Sprintf("/logshipper-benchmark-%s", s.Name())), &specs.LinuxResources{
-		CPU: &specs.CPU{
-			//Shares:          &shares,
-			RealtimeRuntime: 10000,   // 10 ms
-			RealtimePeriod:  1000000, // 1 second
-		},
-	})
-	defer control.Delete()
+        //shares := uint64(100)
+        realtimeRuntime :=  int64(1000)
+        realtimePeriod := uint64(500000)
+
+        control, err := cgroups.New(cgroups.V1, cgroups.StaticPath(fmt.Sprintf("/logshipper-benchmark-%s", s.Name())), &specs.LinuxResources{
+                CPU: &specs.LinuxCPU{
+                        //Shares:          &shares,
+                        RealtimeRuntime: &realtimeRuntime,   // 1 ms
+                        RealtimePeriod:  &realtimePeriod, // 500 milliseconds
+                },
+        })
+        defer control.Delete()
+        if err != nil {
+                fmt.Println("[ERROR] Could not create cgroup: ", err)
+        }
+
 
 	// Ensure the working directory exists, if not create it
 	//workingDir :=  fmt.Sprintf("%s/benchmarks/%s/", strings.TrimRight(utils.GetCwd(), "/"), s.Name())
